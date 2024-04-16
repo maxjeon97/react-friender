@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PhotoSubmitForm from "./PhotoSubmitForm";
 import './App.css';
 
 
@@ -10,7 +11,7 @@ import './App.css';
 */
 
 function App() {
-
+  return <PhotoSubmitForm />;
 }
 
 
