@@ -11,11 +11,8 @@ function PhotoSubmitForm() {
 
         const formData = new FormData();
         formData.append('image', evt.target.elements.image.files[0]);
-        const response = await fetch('http://localhost:3000/upload', {
-            method: "POST",
-            body: formData
-        });
-        const data = await response.json();
+        // await updatePhoto(formData);
+
         setImage(data.imageUrl);
     }
 
