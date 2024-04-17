@@ -1,0 +1,25 @@
+.NavBar {
+  background-color: rgb(93, 99, 100);
+  text-align: center;
+  font-weight: bold;
+}
+
+.NavBar a {
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.NavBar a.active {
+  color: black;
+}
+
+.NavBar-logo {
+  width: 60px;
+  height: auto;
+  margin: -20px -10px;
+}
+
+.navbar-brand {
+  color: rgb(255, 255, 255) !important;
+}

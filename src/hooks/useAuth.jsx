@@ -9,6 +9,7 @@ function useAuth(key) {
 
   useEffect(function getUserData() {
     async function fetchUserData() {
+      console.log("got here", token);
       FrienderApi.token = token;
       const { username } = jwtDecode(token);
       const userData = await FrienderApi.getUser(username);
@@ -33,13 +34,13 @@ function useAuth(key) {
   }, [token]);
 
   async function login(formData) {
-    const resp = await FrienderApi.login(formData);
-    setToken(resp.token);
+    const respToken = await FrienderApi.login(formData);
+    setToken(respToken);
   }
 
   async function register(formData) {
-    const resp = await FrienderApi.register(formData);
-    setToken(resp.token);
+    const respToken = await FrienderApi.register(formData);
+    setToken(respToken);
   }
 
   async function updateUser(formData) {

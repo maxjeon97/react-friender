@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import NavBar from './NavBar';
+import NavBar from './common/NavBar';
 import RoutesList from './common/RoutesList';
-import userContext from './userContext';
+import userContext from './user/userContext';
 import LoadingSpinner from './common/LoadingSpinner';
+import useAuth from './hooks/useAuth';
 
 /** Component for entire page.
  *

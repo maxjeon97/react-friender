@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './HomePage';
 import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
-import ProfileForm from '../user/ProfileForm';
+// import ProfileForm from '../user/ProfileForm';
 import { useContext } from "react";
 import userContext from '../user/userContext';
 

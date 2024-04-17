@@ -1,0 +1,9 @@
+.LoginForm {
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.LoginForm-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

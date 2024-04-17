@@ -25,8 +25,8 @@ function HomePage() {
         <h3>Welcome back, {user.firstName}.</h3>
       ) : (
         <div className="HomePage-links">
-          <Link className="btn btn-primary" to='/login'>Log in</Link>
-          <Link className="btn btn-primary" to='/signup'>Sign up</Link>
+          <Link className="btn btn-primary" to='/login'>Login</Link>
+          <Link className="btn btn-primary" to='/register'>Register</Link>
         </div>
       )}
     </div>

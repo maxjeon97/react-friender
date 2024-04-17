@@ -43,11 +43,12 @@ function LoginForm({ login }) {
     }
 
     return (
-        <div className="LoginForm col-9">
-            <h1>Log In</h1>
+        <div className="LoginForm col-2">
+            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input
+                    id="username"
                     type="text"
                     name='username'
                     value={inputValues.username}
@@ -56,6 +57,7 @@ function LoginForm({ login }) {
                 />
                 <label htmlFor="password">Password</label>
                 <input
+                    id="password"
                     type="password"
                     name='password'
                     value={inputValues.password}
