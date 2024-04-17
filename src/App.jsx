@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar';
-import RoutesList from './RoutesList';
+import RoutesList from './common/RoutesList';
 import userContext from './userContext';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from './common/LoadingSpinner';
 
 /** Component for entire page.
  *
