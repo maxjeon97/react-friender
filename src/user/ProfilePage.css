@@ -9,8 +9,8 @@
 
 .ProfilePage-Container {
   display: flex;
-  justify-content: space-around;
-  padding: 0 500px;
+  justify-content: center;
+  gap: 20vw;
 }
 
 .ProfilePage-Photo {
