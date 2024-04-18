@@ -5,6 +5,7 @@ import FrienderApi from "../api/api";
 import { Navigate, useParams } from "react-router-dom";
 import Message from "./Message";
 import ChatForm from "./ChatForm";
+import './Chatbox.css';
 
 /**Chatbox component that shows messages between two users and allows the
  * current user to send messages
@@ -25,28 +26,35 @@ function Chatbox() {
 
   const { friendUsername } = useParams();
 
+
   useEffect(function fetchMessagesOnMount() {
-    async function fetchMessages() {
-      try {
-        const messages = await FrienderApi.getMessagesBetween(
-          user.username, friendUsername
-        );
-        setMessages(messages);
-      } catch (err) {
-        console.error("Error occured getting messages", err);
-      } finally {
-        setIsLoading(false);
-      }
-    }
     fetchMessages();
-  }, [messages]);
+  }, []);
+
+  /** handles API call to fetch all messages between current user and friend */
+  async function fetchMessages() {
+    try {
+      const messages = await FrienderApi.getMessagesBetween(
+        user.username, friendUsername
+      );
+      setMessages(messages);
+    } catch (err) {
+      console.error("Error occured getting messages", err);
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   /** Sends API call to add new message to database and sets the state
    * with new message */
   async function sendMessage(data) {
-    const newMessage = await FrienderApi.sendMessage(data);
-    setMessages(messages => [...messages, newMessage]);
-    setIsLoading(true);
+    try {
+      await FrienderApi.sendMessage(data);
+      await fetchMessages();
+    }
+    catch (err) {
+      console.error("Error occured sending message", err);
+    }
   }
 
   const friend = user.friends.find(f => f.username = friendUsername);
@@ -59,14 +67,12 @@ function Chatbox() {
       <div className="Chatbox-Header">
         {`${friend.firstName} ${friend.lastName}`}
       </div>
-      {messages.map(m => <Message key={m.id} message={m} />)}
-      <div>
-        <ChatForm sendMessage={sendMessage} friend={friend} />
+      <div className="Chatbox-Messages">
+        {messages.map(m => <Message key={m.id} message={m} />)}
       </div>
+      <ChatForm sendMessage={sendMessage} friend={friend} />
     </div>
   );
-
-
 }
 
 export default Chatbox;

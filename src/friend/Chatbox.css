@@ -1,0 +1,21 @@
+.Chatbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 75vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.Chatbox-Header {
+  font-size: 3rem;
+}
+
+.Chatbox-Messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

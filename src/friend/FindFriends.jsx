@@ -5,6 +5,7 @@ import LoadingSpinner from '../common/LoadingSpinner';
 import UserCard from '../user/UserCard';
 import NoViewableUsers from '../user/NoViewableUsers';
 import { sample } from 'lodash';
+import Alert from '../common/Alert';
 import './FindFriends.css';
 
 

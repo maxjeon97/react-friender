@@ -9,6 +9,21 @@
  */
 
 function Message({ message }) {
+    const myMessageStyles = {
+        alignSelf: 'flex-end',
+        backgroundColor: 'blue'
+    };
+
+    const friendMessageStyles = {
+        alignSelf: 'flex-start',
+        backgroundColor: 'gray'
+    };
+
+    return (
+        <div className="Message">
+
+        </div>
+    );
 }
 
 export default Message;
