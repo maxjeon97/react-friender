@@ -10,7 +10,7 @@ function ProfilePage({ updateUser, updatePhoto }) {
 
   return (
     <div className="ProfilePage">
-      <h1>Edit {user.username}'s Profile!</h1>
+      <h1 className="ProfilePage-Title mt-4 mb-5">Edit {user.username}'s Profile!</h1>
       <div className="ProfilePage-Container">
         <div className="ProfilePage-Photo">
           <h3>Change your profile picture!</h3>

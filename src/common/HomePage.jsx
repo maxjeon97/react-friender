@@ -19,10 +19,15 @@ function HomePage() {
 
   return (
     <div className="HomePage col-10">
-      <h1>Friender</h1>
-      <h3>Make new friends!</h3>
+      <div className='HomePage-title-logo'>
+        <h1 className='HomePage-title'>Friender</h1>
+        <img className="HomePage-logo"
+          src="/logos/FrienderLogo.png"
+          alt="Friender-logo" />
+      </div>
+      <h3 className="mb-3">Make new friends!</h3>
       {user ? (
-        <h3>Welcome back, {user.firstName}.</h3>
+        <h4>Welcome back, {user.firstName}.</h4>
       ) : (
         <div className="HomePage-links">
           <Link className="btn btn-primary" to='/login'>Login</Link>

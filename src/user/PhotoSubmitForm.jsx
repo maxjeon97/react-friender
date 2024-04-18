@@ -29,8 +29,7 @@ function PhotoSubmitForm({ updatePhoto }) {
                 alt={`${user.username} Image`}
                 src={user.imageUrl}
                 className='PhotoSubmitForm-Image' />
-
-            <form onSubmit={handleSubmit} className='mt-2'>
+            <form onSubmit={handleSubmit} className='mt-5'>
                 <input type="file" name="image" onChange={handleChange} />
                 <button
                     className='btn btn-primary'

@@ -8,6 +8,20 @@
   color:white;
 }
 
+.HomePage-title {
+  font-weight: 700;
+}
+
+.HomePage-title-logo {
+  display: flex;
+}
+
+.HomePage-logo {
+  width: 70px;
+  height: 70px;
+  margin: -8px -5px;
+}
+
 .HomePage-links {
   display: flex;
   flex-direction: row;

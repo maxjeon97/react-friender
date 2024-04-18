@@ -46,7 +46,7 @@ function ProfileEditForm({ updateUser }) {
   }
 
   return (
-    <div className="ProfileEditForm">
+    <div className="ProfileEditForm col-12">
       <h1>Profile</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>

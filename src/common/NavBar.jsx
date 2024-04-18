@@ -60,10 +60,10 @@ function NavBar({ logout }) {
         <Link
           className="navbar-brand ms-2"
           to="/">Friender
-          {/* <img
+          <img
           className="NavBar-logo"
-          src="/logos/logo-jobly1.png"
-          alt="jobly-logo" /> */}
+          src="/logos/FrienderLogo.png"
+          alt="Friender-logo" />
         </Link>
         {user
           ? generateLoggedInNavBar()

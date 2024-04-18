@@ -1,12 +1,21 @@
 .ProfilePage {
   margin-top: 15px;
   padding-bottom: 15px;
+}
+
+.ProfilePage-Title {
   text-align: center;
 }
 
 .ProfilePage-Container {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
+  padding: 0 500px;
+}
+
+.ProfilePage-Photo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
