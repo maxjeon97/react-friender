@@ -100,6 +100,12 @@ class FrienderApi {
     return res.matched;
   }
 
+  /** gets friends of the user from API */
+  static async getFriends(username) {
+    let res = await this.request(`users/${username}/friends`);
+    return res.friends;
+  }
+
   // obviously, you'll add a lot here ...
 }
 

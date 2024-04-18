@@ -1,6 +1,10 @@
 .UserCard {
-  padding-top: 15px;
+  padding-top: 25vh;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .UserCard-Header {
@@ -19,21 +23,26 @@
 
 .UserCard-Button-Container {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 20px;
 }
 
 .UserCard-Like-Button {
-  width: 50%;
-  color: lightgreen;
+  width: 300px;
+  height: 300px;
+  color: rgb(255, 255, 255);
+  font-size: 75px;
   background-color: green;
 }
 
 .UserCard-Dislike-Button {
-  width: 50%;
-  color: lightcoral;
+  width: 300px;
+  height: 300px;
+  color: rgb(255, 255, 255);
+  font-size: 75px;
   background-color: red;
 }

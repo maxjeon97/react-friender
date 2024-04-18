@@ -26,7 +26,7 @@ function NavBar({ logout }) {
           <NavLink className="nav-link" to="/find-friends">FindFriends</NavLink>
         </li>
         <li className="nav-item me-4">
-          <NavLink className="nav-link" to="/matches">Matches</NavLink>
+          <NavLink className="nav-link" to="/friends">Friends</NavLink>
         </li>
         <li className="nav-item me-4">
           <NavLink className="nav-link" to="/profile">Profile</NavLink>

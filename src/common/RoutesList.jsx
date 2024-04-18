@@ -4,6 +4,7 @@ import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
 import ProfilePage from '../user/ProfilePage';
 import FindFriends from '../user/FindFriends';
+import FriendPage from '../user/FriendPage';
 import { useContext } from "react";
 import userContext from '../user/userContext';
 
@@ -17,7 +18,7 @@ import userContext from '../user/userContext';
  *
  * State: none
  *
- * App -> RoutesList -> {FindFriends, Matches, HomePage,
+ * App -> RoutesList -> {FindFriends, FriendList, HomePage,
  *                      ProfilePage, LoginForm, RegisterForm}
  */
 
@@ -31,8 +32,7 @@ function RoutesList({ login, register, updateUser, updatePhoto }) {
             {user
                 ? <>
                     <Route path='/find-friends' element={<FindFriends updateUser={updateUser} />} />
-                    {/* <Route path='/companies/:handle' element={<CompanyDetail applyToJob={applyToJob} />} />
-                    <Route path='/jobs' element={<JobList applyToJob={applyToJob} />} /> */}
+                    <Route path='/friends' element={<FriendPage />} />
                     <Route path='/profile' element={<ProfilePage updatePhoto={updatePhoto} updateUser={updateUser} />} />
                 </>
                 : <>

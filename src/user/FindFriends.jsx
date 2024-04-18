@@ -42,7 +42,7 @@ function FindFriends({ updateUser }) {
             setViewableUsers(users);
         }
         catch (err) {
-            console.error("Error occured with getViewableUsers", err);
+            console.error("Error occured getting viewable users", err);
         }
         finally {
             setIsLoading(false);

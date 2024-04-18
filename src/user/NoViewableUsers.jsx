@@ -23,7 +23,7 @@ function NoViewableUsers({ fetchViewableUsers, updateUser }) {
   const differenceInHours = getTimeDifferenceInHours(timeOfRender, userLastSearchedTime);
   const canSearch = differenceInHours >= 1;
 
-  /** Handles Search butto click, updates user and calls parent function */
+  /** Handles Search button click, updates user and calls parent function */
   async function handleClick() {
     await updateUser({
       lastSearched: timeOfRender.toISOString(),
@@ -34,7 +34,7 @@ function NoViewableUsers({ fetchViewableUsers, updateUser }) {
 
   return (
     <div className="NoViewableUsers">
-      <h1>You have no users in your area at this time</h1>
+      <h1>You've seen all the users in your area!</h1>
       {!canSearch && <div>
         <h3> You must wait an hour between searches!</h3>
         <h5>You have {Math.floor((1 - differenceInHours) * 60)} minutes left!</h5>
@@ -42,8 +42,8 @@ function NoViewableUsers({ fetchViewableUsers, updateUser }) {
       <button
         onClick={handleClick}
         disabled={!canSearch}
-        className="NoViewableUsers-Button">
-        Find More?
+        className="NoViewableUsers-Button btn btn-success">
+        Search Again
       </button>
     </div>
   );
