@@ -8,7 +8,7 @@ import './Alert.css';
  *
  * State: none
  *
- * {LoginForm, ProfileForm, SignupForm, ErrorPage} -> Alert
+ * { LoginForm, ProfileEditForm, RegisterForm } -> Alert
  */
 function Alert({text, type}) {
   return <div className={`Alert alert alert-${type}`} role="alert">{text}</div>;

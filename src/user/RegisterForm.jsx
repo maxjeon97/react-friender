@@ -18,12 +18,15 @@ const INITIAL_STATE = {
 /** Component for Register form
  *
  * props:
- * - RegisterUser(): fn to call in parent
+ * - register(): fn to call in parent
  *
- * State: inputValues
+ * State:
+ * - inputValues
+ * - errors
  *
  * App -> RegisterForm
  */
+
 function RegisterForm({ register }) {
   const [inputValues, setInputValues] = useState(INITIAL_STATE);
   const [errors, setErrors] = useState([]);

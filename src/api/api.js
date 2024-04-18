@@ -86,6 +86,20 @@ class FrienderApi {
     return data.imageUrl;
   }
 
+  /** Add photo to user */
+  static async getViewableUsers(username, location, friendRadius) {
+    const queryParams = { location, friendRadius };
+
+    let res = await this.request(`users/${username}/viewable`, queryParams);
+    return res.users;
+  }
+
+  /** checks match, returns boolean */
+  static async checkMatch(username, data) {
+    let res = await this.request(`users/${username}/check-match`, data, "POST");
+    return res.matched;
+  }
+
   // obviously, you'll add a lot here ...
 }
 

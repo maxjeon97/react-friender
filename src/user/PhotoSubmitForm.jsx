@@ -3,11 +3,21 @@ import userContext from './userContext';
 import { useContext, useState } from 'react';
 
 
-/** PhotoSubmitForm component for Friender */
+/** PhotoSubmitForm component for Friender
+ *
+ * Props:
+ * - updatePhoto(): function to call in parent
+ *
+ * State:
+ * - image
+ *
+ * ProfilePage -> PhotoSubmitForm
+*/
 function PhotoSubmitForm({ updatePhoto }) {
     const { user } = useContext(userContext);
     const [image, setImage] = useState(null);
 
+    /**handles input change */
     function handleChange(evt) {
         const formData = new FormData();
         formData.append('image', evt.target.files[0]);
@@ -15,11 +25,9 @@ function PhotoSubmitForm({ updatePhoto }) {
         setImage(formData);
     }
 
+    /** handles form submit; calls parent function */
     async function handleSubmit(evt) {
         evt.preventDefault();
-
-        // const formData = new FormData();
-        // formData.append('image', evt.target.elements.image.files[0]);
         await updatePhoto(image);
     }
 

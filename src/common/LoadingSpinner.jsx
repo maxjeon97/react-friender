@@ -1,6 +1,6 @@
 import "./LoadingSpinner.css";
 
-/** LoadingSpinner component for Jobly.
+/** LoadingSpinner component for Friender.
  *
  * Props: none
  * State: none

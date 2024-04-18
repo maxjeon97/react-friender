@@ -14,7 +14,9 @@ const INITIAL_STATE = {
  * props:
  * - loginUser(): fn to call in parent
  *
- * State: inputValues
+ * State:
+ * - inputValues
+ * - errors
  *
  * App -> LoginForm
  */

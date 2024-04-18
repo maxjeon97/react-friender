@@ -8,19 +8,20 @@ import userContext from '../user/userContext';
 
 /** Component to hold all routes.
  *
- * State:
+ * Props:
  * - login(): fn to call in parent
- * - signup(): fn to call in parent
+ * - register(): fn to call in parent
+ * - updateUser(): fn to call in parent
+ * - updatePhoto(): fn to call in parent
  *
- * Props: none
+ * State: none
  *
- * App -> RouteList -> {HomePage, CompanyList, CompanyDetail, JobList,
- *                      ProfileForm, LoginForm, SignupForm}
+ * App -> RoutesList -> {FindFriends, Matches, HomePage,
+ *                      ProfilePage, LoginForm, RegisterForm}
  */
 
 
 function RoutesList({ login, register, updateUser, updatePhoto }) {
-    console.log("in rendering RouteList");
     const { user } = useContext(userContext);
 
     return (
@@ -28,7 +29,7 @@ function RoutesList({ login, register, updateUser, updatePhoto }) {
             <Route path='/' element={<HomePage />} />
             {user
                 ? <>
-                    {/* <Route path='/' element={<CompanyList />} />
+                    {/* <Route path='/find-friends' element={<FindFriends />} />
                     <Route path='/companies/:handle' element={<CompanyDetail applyToJob={applyToJob} />} />
                     <Route path='/jobs' element={<JobList applyToJob={applyToJob} />} /> */}
                     <Route path='/profile' element={<ProfilePage updatePhoto={updatePhoto} updateUser={updateUser} />} />

@@ -5,6 +5,16 @@ import { useContext } from "react";
 import "./ProfilePage.css";
 
 
+/** ProfilePage component for Friender
+ *
+ * Props:
+ * - updateUser(): function to call in parent
+ * - updatePhoto(): function to call in parent
+ *
+ * State: none
+ *
+ * RoutesList -> ProfilePage
+ */
 function ProfilePage({ updateUser, updatePhoto }) {
   const { user } = useContext(userContext);
 

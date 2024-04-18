@@ -5,7 +5,7 @@ import { useContext } from "react";
 import userContext from "../user/userContext";
 
 
-/** Navigation bar component for Jobly.
+/** Navigation bar component for Friender.
  *
  * Props:
  * - logout(): parent function

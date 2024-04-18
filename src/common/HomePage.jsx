@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "./HomePage.css";
+import { useContext } from "react";
+import userContext from "../user/userContext";
+
 
 /** Component for homepage.
  *
@@ -7,14 +10,10 @@ import "./HomePage.css";
  *
  * Props: none
  *
- * App -> Home
+ * RoutesList -> HomePage
  */
 
-import { useContext } from "react";
-import userContext from "../user/userContext";
-
 function HomePage() {
-  console.log("in rendering HomePage");
   const { user } = useContext(userContext);
 
   return (

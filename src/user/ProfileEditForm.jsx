@@ -11,8 +11,9 @@ import "./ProfileEditForm.css";
  *
  * State: inputValues
  *
- * App -> ProfileEditForm
+ * ProfilePage -> ProfileEditForm
  */
+
 function ProfileEditForm({ updateUser }) {
   const { user } = useContext(userContext);
   const [inputValues, setInputValues] = useState({
