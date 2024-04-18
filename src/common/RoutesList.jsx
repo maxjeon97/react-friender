@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './HomePage';
 import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
-// import ProfileForm from '../user/ProfileForm';
+import ProfilePage from '../user/ProfilePage';
 import { useContext } from "react";
 import userContext from '../user/userContext';
 
@@ -19,7 +19,7 @@ import userContext from '../user/userContext';
  */
 
 
-function RoutesList({ login, register, updateUser }) {
+function RoutesList({ login, register, updateUser, updatePhoto }) {
     console.log("in rendering RouteList");
     const { user } = useContext(userContext);
 
@@ -30,8 +30,8 @@ function RoutesList({ login, register, updateUser }) {
                 ? <>
                     {/* <Route path='/' element={<CompanyList />} />
                     <Route path='/companies/:handle' element={<CompanyDetail applyToJob={applyToJob} />} />
-                    <Route path='/jobs' element={<JobList applyToJob={applyToJob} />} />
-                    <Route path='/profile' element={<ProfileForm updateUser={updateUser} />} /> */}
+                    <Route path='/jobs' element={<JobList applyToJob={applyToJob} />} /> */}
+                    <Route path='/profile' element={<ProfilePage updatePhoto={updatePhoto} updateUser={updateUser} />} />
                 </>
                 : <>
                     <Route path='/login' element={<LoginForm login={login} />} />

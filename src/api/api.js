@@ -12,7 +12,7 @@ class FrienderApi {
   // Remember, the backend needs to be authorized with a token
   // We're providing a token you can use to interact with the backend API
   // DON'T MODIFY THIS TOKEN
-  static token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNzEzMzg4MDk0fQ.VfMi2UCcir7Wl03k0RdhH2gVE7UiDd249A4hzX8poyU";
+  static token = null;
 
   static async request(endpoint, data = {}, method = "GET") {
     const url = new URL(`${BASE_URL}/${endpoint}`);

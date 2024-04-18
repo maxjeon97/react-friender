@@ -16,7 +16,7 @@ import useAuth from './hooks/useAuth';
 */
 
 function App() {
-  const { user, token, login, register, updateUser, logout } = useAuth("token");
+  const { user, token, login, register, updateUser, updatePhoto, logout } = useAuth("token");
 
   if (token && !user) return <LoadingSpinner />;
 
@@ -25,7 +25,7 @@ function App() {
       <userContext.Provider value={{ user }}>
         <BrowserRouter>
           <NavBar logout={logout} />
-          <RoutesList login={login} register={register} updateUser={updateUser} />
+          <RoutesList login={login} register={register} updateUser={updateUser} updatePhoto={updatePhoto}/>
         </BrowserRouter>
       </userContext.Provider>
     </div>

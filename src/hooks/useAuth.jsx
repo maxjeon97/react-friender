@@ -51,11 +51,19 @@ function useAuth(key) {
     }));
   }
 
+  async function updatePhoto(formData) {
+    const updatedPhoto = await FrienderApi.updatePhoto(formData);
+    setUser((user) => ({
+      ...user,
+      imageUrl: updatedPhoto
+    }));
+  }
+
   async function logout() {
     setToken(null);
   }
 
-  return { user, token, login, register, updateUser, logout };
+  return { user, token, login, register, updateUser, updatePhoto, logout };
 }
 
 export default useAuth;

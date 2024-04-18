@@ -1,0 +1,11 @@
+.PhotoSubmitForm-Image {
+  margin-top: 5vh;
+  min-height: 300px;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+.PhotoSubmitForm {
+  margin: auto;
+  margin-top: 5vh;
+}
