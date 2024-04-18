@@ -106,6 +106,17 @@ class FrienderApi {
     return res.friends;
   }
 
+  /** gets messages between the current user and their specified friend */
+  static async getMessagesBetween(currUsername, friendUsername) {
+    let res = await this.request(`users/${currUsername}/messages-between/${friendUsername}`);
+    return res.messages;
+  }
+
+  static async sendMessage(data) {
+    let res = await this.request('messages', data, "POST");
+    return res.message;
+  }
+
   // obviously, you'll add a lot here ...
 }
 

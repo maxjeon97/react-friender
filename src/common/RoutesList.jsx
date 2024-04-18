@@ -3,10 +3,11 @@ import HomePage from './HomePage';
 import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
 import ProfilePage from '../user/ProfilePage';
-import FindFriends from '../user/FindFriends';
-import FriendPage from '../user/FriendPage';
+import FindFriends from '../friend/FindFriends';
+import FriendPage from '../friend/FriendList';
 import { useContext } from "react";
 import userContext from '../user/userContext';
+import Chatbox from '../friend/Chatbox';
 
 /** Component to hold all routes.
  *
@@ -33,6 +34,7 @@ function RoutesList({ login, register, updateUser, updatePhoto }) {
                 ? <>
                     <Route path='/find-friends' element={<FindFriends updateUser={updateUser} />} />
                     <Route path='/friends' element={<FriendPage />} />
+                    <Route path='/friends/:friendUsername' element={<Chatbox />} />
                     <Route path='/profile' element={<ProfilePage updatePhoto={updatePhoto} updateUser={updateUser} />} />
                 </>
                 : <>

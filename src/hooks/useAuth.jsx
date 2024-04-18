@@ -23,6 +23,7 @@ function useAuth(key) {
         location: userData.location,
         friendRadius: userData.friendRadius,
         lastSearched: userData.lastSearched,
+        friends: userData.friends,
       });
     }
     if (token) {

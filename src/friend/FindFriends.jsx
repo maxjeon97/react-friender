@@ -1,9 +1,9 @@
 import { useState, useContext, useEffect } from 'react';
 import FrienderApi from "../api/api";
-import userContext from './userContext';
+import userContext from '../user/userContext';
 import LoadingSpinner from '../common/LoadingSpinner';
-import UserCard from './UserCard';
-import NoViewableUsers from './NoViewableUsers';
+import UserCard from '../user/UserCard';
+import NoViewableUsers from '../user/NoViewableUsers';
 import { sample } from 'lodash';
 import './FindFriends.css';
 
