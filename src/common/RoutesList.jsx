@@ -3,6 +3,7 @@ import HomePage from './HomePage';
 import LoginForm from '../user/LoginForm';
 import RegisterForm from '../user/RegisterForm';
 import ProfilePage from '../user/ProfilePage';
+import FindFriends from '../user/FindFriends';
 import { useContext } from "react";
 import userContext from '../user/userContext';
 
@@ -29,8 +30,8 @@ function RoutesList({ login, register, updateUser, updatePhoto }) {
             <Route path='/' element={<HomePage />} />
             {user
                 ? <>
-                    {/* <Route path='/find-friends' element={<FindFriends />} />
-                    <Route path='/companies/:handle' element={<CompanyDetail applyToJob={applyToJob} />} />
+                    <Route path='/find-friends' element={<FindFriends updateUser={updateUser} />} />
+                    {/* <Route path='/companies/:handle' element={<CompanyDetail applyToJob={applyToJob} />} />
                     <Route path='/jobs' element={<JobList applyToJob={applyToJob} />} /> */}
                     <Route path='/profile' element={<ProfilePage updatePhoto={updatePhoto} updateUser={updateUser} />} />
                 </>

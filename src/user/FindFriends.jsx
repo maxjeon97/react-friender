@@ -10,7 +10,8 @@ import './FindFriends.css';
 
 /**FindFriends component for Friender
  *
- * Props: none
+ * Props:
+ * - updateUser()
  *
  * State:
  * - viewableUsers: array of user objects that currUser can swipe on
@@ -21,7 +22,7 @@ import './FindFriends.css';
 */
 
 // TODO: could be cool to implement a timer for the alert when a match is successful
-function FindFriends() {
+function FindFriends({ updateUser }) {
     const [viewableUsers, setViewableUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [matched, setMatched] = useState(false);
@@ -61,7 +62,9 @@ function FindFriends() {
         <div className="FindFriends">
             {matched && <Alert text='You just got a new match!' type='success' />}
             {viewableUsers.length === 0
-                ? <NoViewableUsers fetchViewableUsers={fetchViewableUsers} />
+                ? <NoViewableUsers
+                    fetchViewableUsers={fetchViewableUsers}
+                    updateUser={updateUser} />
                 : <UserCard
                     user={sample(viewableUsers)}
                     handleSwipe={handleSwipe} />}
