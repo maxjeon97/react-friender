@@ -77,6 +77,10 @@ function Chatbox() {
   return (
     <div className="Chatbox">
       <div className="Chatbox-Header">
+        <img
+        className="Chatbox-Image"
+        src={friend.imageUrl}
+        alt={`Image of ${friend.firstName} ${friend.lastName}`} />
         {`${friend.firstName} ${friend.lastName}`}
       </div>
       <div ref={scrollableContainerRef} className="Chatbox-Messages">
