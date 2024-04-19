@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import userContext from "../user/userContext";
 import LoadingSpinner from "../common/LoadingSpinner";
 import FrienderApi from "../api/api";
@@ -23,13 +23,19 @@ function Chatbox() {
   const { user } = useContext(userContext);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const scrollableContainerRef = useRef(null);
 
+  console.log("scrollableContainerRef", scrollableContainerRef);
   const { friendUsername } = useParams();
 
 
   useEffect(function fetchMessagesOnMount() {
     fetchMessages();
   }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   /** handles API call to fetch all messages between current user and friend */
   async function fetchMessages() {
@@ -57,6 +63,14 @@ function Chatbox() {
     }
   }
 
+  /**Scrolls user to bottom of the messages container */
+  function scrollToBottom() {
+    if (scrollableContainerRef.current) {
+      scrollableContainerRef.current.scrollTop =
+        scrollableContainerRef.current.scrollHeight;
+    }
+  }
+
   const friend = user.friends.find(f => f.username = friendUsername);
 
   if (!friend) return <Navigate to="/friends" />;
@@ -67,10 +81,10 @@ function Chatbox() {
       <div className="Chatbox-Header">
         {`${friend.firstName} ${friend.lastName}`}
       </div>
-      <div className="Chatbox-Messages">
+      <div ref={scrollableContainerRef} className="Chatbox-Messages">
         {messages.map(m => <Message key={m.id} message={m} />)}
       </div>
-      <ChatForm sendMessage={sendMessage} friend={friend} />
+        <ChatForm sendMessage={sendMessage} friend={friend} />
     </div>
   );
 }

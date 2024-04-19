@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import userContext from "../user/userContext";
+import "./Message.css";
+
 /**Message component that shows a message between current user and friend
  *
  * Props:
@@ -9,21 +13,28 @@
  */
 
 function Message({ message }) {
-    const myMessageStyles = {
-        alignSelf: 'flex-end',
-        backgroundColor: 'blue'
-    };
+  const { user } = useContext(userContext);
+  const myMessageStyles = {
+    alignSelf: 'flex-end',
+    backgroundColor: 'blue'
+  };
 
-    const friendMessageStyles = {
-        alignSelf: 'flex-start',
-        backgroundColor: 'gray'
-    };
+  const friendMessageStyles = {
+    alignSelf: 'flex-start',
+    backgroundColor: 'gray'
+  };
 
-    return (
-        <div className="Message">
+  const messageStyle = message.fromUser.username === user.username
+    ? myMessageStyles
+    : friendMessageStyles;
 
-        </div>
-    );
+  return (
+    <div className="Message" style={messageStyle}>
+      <p className="Message-Body">
+        {message.body}
+      </p>
+    </div>
+  );
 }
 
 export default Message;

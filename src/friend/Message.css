@@ -1,0 +1,14 @@
+.Message {
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  align-self: center;
+  padding: 5px 10px;
+  margin: 2px 5px;
+  max-width: 60%;
+  overflow-wrap: break-word;
+}
+
+.Message-Body {
+  margin: 0;
+}
