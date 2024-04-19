@@ -24,17 +24,32 @@
   margin-bottom: 4px;
   border-radius: 10px;
   border: 1px solid gray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.Chatbox-Messages > :first-child {
+  margin-top: auto;
 }
 
 
 .Chatbox-Messages::-webkit-scrollbar {
-  /* width: 3px;
-  background-color: rgb(49, 49, 49);
-  border-radius: 1%; */
-  display: none;
+  width: 5px;
+}
+
+.Chatbox-Messages::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: gray;
+  border-radius: 5px;
+  /* display: none; */
+}
+
+.Chatbox-Messages::-webkit-scrollbar-track-piece {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .Chatbox-Messages::-webkit-scrollbar-track {
   display: none;
-  background-color: red;
+  /* background-color: red; */
 }
