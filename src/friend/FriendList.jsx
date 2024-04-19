@@ -1,24 +1,56 @@
 import './FriendList.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import userContext from '../user/userContext';
 import FriendCard from './FriendCard';
+import FrienderApi from '../api/api';
+import LoadingSpinner from '../common/LoadingSpinner';
 
 /**FriendList component that contains Friend Cards
  *
  * Props: none
  *
- * State: none
+ * State:
+ * - friends: array of user's friends
+ * - isLoading
  *
- * RoutesList -> FriendList -> { Chatbox }
+ * RoutesList -> FriendList -> FriendCard
  */
 
 function FriendList() {
-    const { user } = useContext(userContext);
+    const [friends, setFriends] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const { user, setUser } = useContext(userContext);
+
+    useEffect(function fetchFriendsOnMount() {
+        async function fetchFriends() {
+            try {
+                const friends =
+                    await FrienderApi.getFriends(user.username);
+                setFriends(friends);
+                // set user as well to make sure our user in context has the updated friends array
+                setUser(user => ({
+                    ...user,
+                    friends
+                }));
+            }
+            catch (err) {
+                console.error("Error occured getting user's friends", err);
+            }
+            finally {
+                setIsLoading(false);
+            }
+        }
+        fetchFriends();
+    }, []);
+
+    if (isLoading) return <LoadingSpinner />;
 
     return (
         <div className="FriendList">
-            <h3>You have {user.friends.length} friend{user.friends.length !== 1 && "s"}!</h3>
-            {user.friends.map(f => <FriendCard key={f.username} friend={f} />)}
+            <h3 className="FriendList-Title">
+                You have {friends.length} friend{friends.length !== 1 && "s"}!
+            </h3>
+            {friends.map(f => <FriendCard key={f.username} friend={f} />)}
         </div>
     );
 }

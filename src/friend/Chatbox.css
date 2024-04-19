@@ -12,6 +12,8 @@
 
 .Chatbox-Header {
   font-size: 3rem;
+  color: rgb(56, 90, 100);
+  font-weight: 600;
 }
 
 .Chatbox-Messages {
@@ -41,7 +43,6 @@
   width: 3px;
   background-color: gray;
   border-radius: 5px;
-  /* display: none; */
 }
 
 .Chatbox-Messages::-webkit-scrollbar-track-piece {

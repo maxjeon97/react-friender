@@ -7,7 +7,7 @@ function useAuth(key) {
   const [token, setToken] = useLocalStorage(key);
   const [user, setUser] = useState();
 
-  useEffect(function getUserData() {
+  useEffect(function fetchUserDataOnMountAndTokenChange() {
     async function fetchUserData() {
       console.log("got here", token);
       FrienderApi.token = token;

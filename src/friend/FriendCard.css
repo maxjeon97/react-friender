@@ -1,0 +1,16 @@
+.FriendCard {
+  margin: auto;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+.FriendCard-Body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 5vh;
+  color: rgb(56, 90, 100);
+}
+
+

@@ -16,7 +16,7 @@ import useAuth from './hooks/useAuth';
 */
 
 function App() {
-  const { user,  setUser, token, login, register, updateUser, updatePhoto, logout } = useAuth("token");
+  const { user, setUser, token, login, register, updateUser, updatePhoto, logout } = useAuth("token");
 
   console.log("user data", user);
 

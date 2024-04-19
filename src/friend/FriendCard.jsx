@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './FriendCard.css';
 
 /**FriendCard component that is a link to friend chatbox while
  * also displaying that friends' information
@@ -13,10 +14,10 @@ import { Link } from "react-router-dom";
 
 function FriendCard({ friend }) {
   return (
-    <Link className="card FriendCard" to={`/friends/${friend.username}`}>
+    <Link className="FriendCard card col-lg-4 col-md-6 col-sm-8" to={`/friends/${friend.username}`}>
       <div className="card-body FriendCard-Body">
         <img src={friend.imageUrl} alt={`Image of ${friend.username}`} className="FriendCard-Image" />
-          <h4 className="FriendCard-Name">{`${friend.firstName} ${friend.lastName}`}</h4>
+          <h1 className="FriendCard-Name">{`${friend.firstName} ${friend.lastName}`}</h1>
       </div>
     </Link>
   );

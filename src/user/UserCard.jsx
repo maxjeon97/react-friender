@@ -1,6 +1,6 @@
 import "./UserCard.css";
 
-/**Component for User Card for friender
+/**Component for User Card for Friender
  *
  * props:
  * - user: Object of user data
@@ -15,15 +15,13 @@ function UserCard({ user, handleSwipe }) {
 
   /** Handles user being liked, calls parent function */
   async function handleLike() {
-    await handleSwipe(user, true);
+    await handleSwipe(user.username, true);
   }
 
   /** Handles user being disliked, calls parent function */
   async function handleDislike() {
-    await handleSwipe(user, false);
+    await handleSwipe(user.username, false);
   }
-
-  console.log("viewed user", user);
 
   return (
     <div className="UserCard">

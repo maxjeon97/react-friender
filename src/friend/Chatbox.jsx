@@ -26,7 +26,7 @@ function Chatbox() {
   const { user } = useContext(userContext);
   const scrollableContainerRef = useRef(null);
 
-  useEffect(function fetchMessagesOnLoad() {
+  useEffect(function fetchMessagesOnMount() {
     fetchMessages();
   }, []);
 
