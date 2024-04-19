@@ -43,7 +43,8 @@ function ChatForm({ sendMessage, friend }) {
                     />
                     <button
                         type="submit"
-                        className="ChatForm-Button btn btn-success">Send</button>
+                        className="ChatForm-Button btn btn-success"
+                        disabled={inputValue === ""}>Send</button>
                 </div>
             </form>
         </div>
