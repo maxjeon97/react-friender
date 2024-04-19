@@ -15,6 +15,7 @@ import "./ProfileEditForm.css";
  */
 
 function ProfileEditForm({ updateUser }) {
+  const { user } = useContext(userContext);
   const [inputValues, setInputValues] = useState({
     username: user.username,
     firstName: user.firstName,
@@ -25,7 +26,6 @@ function ProfileEditForm({ updateUser }) {
     friendRadius: user.friendRadius,
   });
   const [alerts, setAlerts] = useState([]);
-  const { user } = useContext(userContext);
 
   /** updates inputValues. */
   function handleChange(evt) {

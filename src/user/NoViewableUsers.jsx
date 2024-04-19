@@ -7,7 +7,7 @@ import "./NoViewableUsers.css";
 /**Component for No Viewable Users page for friender
  *
  * Props:
- * - fetchViewableUsers()
+ * - setIsLoading()
  * - updateUser()
  *
  * State: none
@@ -15,7 +15,7 @@ import "./NoViewableUsers.css";
  * RoutesList -> NoViewableUsers
  */
 
-function NoViewableUsers({ fetchViewableUsers, updateUser }) {
+function NoViewableUsers({ setIsLoading, updateUser }) {
   const { user } = useContext(userContext);
 
   const timeOfRender = new Date();
@@ -29,12 +29,14 @@ function NoViewableUsers({ fetchViewableUsers, updateUser }) {
       lastSearched: timeOfRender.toISOString(),
       username: user.username
     });
-    fetchViewableUsers();
+    setIsLoading(true);
   }
 
   return (
     <div className="NoViewableUsers">
-      <h1>You've seen all the users in your area!</h1>
+      <h1>{canSearch
+        ? "Press the button to find users in your area!"
+        : "You've seen all the users in your area!"}</h1>
       {!canSearch && <div>
         <h3> You must wait an hour between searches!</h3>
         <h5>You have {Math.floor((1 - differenceInHours) * 60)} minutes left!</h5>
@@ -43,7 +45,7 @@ function NoViewableUsers({ fetchViewableUsers, updateUser }) {
         onClick={handleClick}
         disabled={!canSearch}
         className="NoViewableUsers-Button btn btn-success">
-        Search Again
+        Search
       </button>
     </div>
   );

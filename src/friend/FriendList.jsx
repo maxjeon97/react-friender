@@ -47,9 +47,9 @@ function FriendList() {
 
     return (
         <div className="FriendList">
-            <h3 className="FriendList-Title">
+            <h1 className="FriendList-Title">
                 You have {friends.length} friend{friends.length !== 1 && "s"}!
-            </h3>
+            </h1>
             {friends.map(f => <FriendCard key={f.username} friend={f} />)}
         </div>
     );

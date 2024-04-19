@@ -3,11 +3,9 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding-top: 5vh;
+  margin-top: 15px;
 }
 
 .FriendList-Title {
   margin-bottom: 30px;
-  font-size: 2rem;
-  font-weight: 700;
 }

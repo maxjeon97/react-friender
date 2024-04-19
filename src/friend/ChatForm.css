@@ -1,3 +1,9 @@
 .ChatForm {
   width: 100%;
 }
+
+input.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: gray;
+}

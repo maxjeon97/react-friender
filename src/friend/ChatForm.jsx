@@ -44,7 +44,7 @@ function ChatForm({ sendMessage, friend }) {
                     <button
                         type="submit"
                         className="ChatForm-Button btn btn-success"
-                        disabled={inputValue === ""}>Send</button>
+                        disabled={!inputValue}>Send</button>
                 </div>
             </form>
         </div>

@@ -22,17 +22,12 @@ import './FindFriends.css';
  * RoutesList -> FindFriends -> { UserCard, NoViewableUsers }
 */
 
-// TODO: could be cool to implement a timer for the alert when a match is successful
 function FindFriends({ updateUser }) {
     const [viewableUsers, setViewableUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [matched, setMatched] = useState(false);
 
     const { user } = useContext(userContext);
-
-    useEffect(function fetchViewableUsersOnMount() {
-        fetchViewableUsers();
-    }, []);
 
     /** fetches viewableUsers from the API and sets state */
     async function fetchViewableUsers() {
@@ -57,14 +52,20 @@ function FindFriends({ updateUser }) {
         setViewableUsers(viewableUsers.filter(u => u.username !== viewedUsername));
     }
 
-    if (isLoading) return <LoadingSpinner />;
+    if (isLoading) {
+        fetchViewableUsers();
+        return <LoadingSpinner />;
+    }
 
     return (
         <div className="FindFriends">
-            {matched && <Alert text='You just got a new match!' type='success' />}
+            {matched &&
+                <div className="FindFriends-Alert">
+                    <Alert text='You just got a new match!' type='success' />
+                </div>}
             {viewableUsers.length === 0
                 ? <NoViewableUsers
-                    fetchViewableUsers={fetchViewableUsers}
+                    setIsLoading={setIsLoading}
                     updateUser={updateUser} />
                 : <UserCard
                     user={sample(viewableUsers)}
