@@ -14,8 +14,8 @@ import { useContext, useState } from 'react';
  * ProfilePage -> PhotoSubmitForm
 */
 function PhotoSubmitForm({ updatePhoto }) {
-    const { user } = useContext(userContext);
     const [image, setImage] = useState(null);
+    const { user } = useContext(userContext);
 
     /**handles input change */
     function handleChange(evt) {

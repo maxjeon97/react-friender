@@ -20,16 +20,13 @@ import './Chatbox.css';
  */
 
 function Chatbox() {
-  const { user } = useContext(userContext);
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { user } = useContext(userContext);
   const scrollableContainerRef = useRef(null);
 
-  console.log("scrollableContainerRef", scrollableContainerRef);
-  const { friendUsername } = useParams();
-
-
-  useEffect(function fetchMessagesOnMount() {
+  useEffect(function fetchMessagesOnLoad() {
     fetchMessages();
   }, []);
 
@@ -71,6 +68,7 @@ function Chatbox() {
     }
   }
 
+  const { friendUsername } = useParams();
   const friend = user.friends.find(f => f.username = friendUsername);
 
   if (!friend) return <Navigate to="/friends" />;
@@ -84,7 +82,7 @@ function Chatbox() {
       <div ref={scrollableContainerRef} className="Chatbox-Messages">
         {messages.map(m => <Message key={m.id} message={m} />)}
       </div>
-        <ChatForm sendMessage={sendMessage} friend={friend} />
+      <ChatForm sendMessage={sendMessage} friend={friend} />
     </div>
   );
 }

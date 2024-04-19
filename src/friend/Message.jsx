@@ -14,6 +14,7 @@ import "./Message.css";
 
 function Message({ message }) {
   const { user } = useContext(userContext);
+
   const myMessageStyles = {
     alignSelf: 'flex-end',
     backgroundColor: 'blue'
