@@ -64,7 +64,7 @@ function useAuth(key) {
     setToken(null);
   }
 
-  return { user, token, login, register, updateUser, updatePhoto, logout };
+  return { user, setUser, token, login, register, updateUser, updatePhoto, logout };
 }
 
 export default useAuth;

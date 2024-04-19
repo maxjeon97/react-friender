@@ -16,7 +16,7 @@ import useAuth from './hooks/useAuth';
 */
 
 function App() {
-  const { user, token, login, register, updateUser, updatePhoto, logout } = useAuth("token");
+  const { user,  setUser, token, login, register, updateUser, updatePhoto, logout } = useAuth("token");
 
   console.log("user data", user);
 
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <userContext.Provider value={{ user }}>
+      <userContext.Provider value={{ user, setUser }}>
         <BrowserRouter>
           <NavBar logout={logout} />
           <RoutesList login={login} register={register} updateUser={updateUser} updatePhoto={updatePhoto} />

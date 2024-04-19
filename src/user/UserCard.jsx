@@ -15,12 +15,12 @@ function UserCard({ user, handleSwipe }) {
 
   /** Handles user being liked, calls parent function */
   async function handleLike() {
-    await handleSwipe(user.username, true);
+    await handleSwipe(user, true);
   }
 
   /** Handles user being disliked, calls parent function */
   async function handleDislike() {
-    await handleSwipe(user.username, false);
+    await handleSwipe(user, false);
   }
 
   console.log("viewed user", user);

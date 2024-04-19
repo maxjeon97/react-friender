@@ -28,7 +28,7 @@ function FindFriends({ updateUser }) {
     const [isLoading, setIsLoading] = useState(true);
     const [matched, setMatched] = useState(false);
 
-    const { user } = useContext(userContext);
+    const { user, setUser } = useContext(userContext);
 
     useEffect(function fetchViewableUsersOnLoad() {
         fetchViewableUsers();
@@ -51,10 +51,18 @@ function FindFriends({ updateUser }) {
     }
 
     /** handles swiping on user */
-    async function handleSwipe(viewedUsername, liked) {
-        const data = { viewedUsername, liked };
-        setMatched(await FrienderApi.checkMatch(user.username, data));
-        setViewableUsers(viewableUsers.filter(u => u.username !== viewedUsername));
+    async function handleSwipe(viewedUser, liked) {
+        const data = { viewedUsername: viewedUser.username, liked };
+        const didMatch = await FrienderApi.checkMatch(user.username, data);
+        setMatched(didMatch);
+        setViewableUsers(viewableUsers.filter(u => u.username !== viewedUser.username));
+
+        if (didMatch) {
+            setUser(user => ({
+                ...user,
+                friends: [...user.friends, viewedUser]
+            }));
+        }
     }
 
     if (isLoading) return <LoadingSpinner />;
