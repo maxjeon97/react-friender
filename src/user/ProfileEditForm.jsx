@@ -89,8 +89,8 @@ function ProfileEditForm({ updateUser }) {
         <label htmlFor="interests">Interests</label>
         <input
           id="interests"
-          type="interests"
-          name='interests'
+          type="text"
+          name="interests"
           value={inputValues.interests}
           onChange={handleChange}
           className="ProfileEditForm-input form-control"
@@ -98,8 +98,8 @@ function ProfileEditForm({ updateUser }) {
         <label htmlFor="location">Location (5-digit Zip Code)</label>
         <input
           id="location"
-          type="location"
-          name='location'
+          type="text"
+          name="location"
           value={inputValues.location}
           onChange={handleChange}
           className="ProfileEditForm-input form-control"
@@ -107,8 +107,8 @@ function ProfileEditForm({ updateUser }) {
         <label htmlFor="friendRadius">Distance From You (in miles)</label>
         <input
           id="friendRadius"
-          type="friendRadius"
-          name='friendRadius'
+          type="text"
+          name="friendRadius"
           value={inputValues.friendRadius}
           onChange={handleChange}
           className="ProfileEditForm-input form-control"

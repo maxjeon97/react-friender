@@ -1,14 +1,18 @@
-# React JS Starter
+# Welcome
+
+This is a straightforward application meant to help users find friends in their
+general area. Some noteworthy functionalities are real-time chat and selective display
+of viewable users based on user preferences.
+
+
+# How to build
 
 Run `npm install` and then `npm run ...`:
 
 | Command     | Description          |
 |-------------|----------------------|
 | start       | Start                |
-|  build      | Build to dist dir    |
-| test        | Run tests            |
-| test:cov    | Run tests w/coverage |
-| test:debug  | Run tests w/debugger |
+| build       | Build to dist dir    |
 
 
 ### Folder Structure
@@ -33,12 +37,3 @@ vite-template-react
 ├── package.json
 ├── vite.config.js
 ```
-
-## Credits
-
-Customizations by Joel Burton (joel@rithmschool.com), based on the
-Vite Template React, which is built and maintained by [Safdar Jamal](https://safdarjamal.github.io).
-
-## License
-
-This project is licensed under the terms of the [MIT license](https://github.com/SafdarJamal/vite-template-react/blob/main/LICENSE).
