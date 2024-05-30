@@ -116,8 +116,6 @@ class FrienderApi {
     let res = await this.request('messages', data, "POST");
     return res.message;
   }
-
-  // obviously, you'll add a lot here ...
 }
 
 export default FrienderApi;

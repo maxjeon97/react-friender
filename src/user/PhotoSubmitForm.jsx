@@ -21,7 +21,6 @@ function PhotoSubmitForm({ updatePhoto }) {
     function handleChange(evt) {
         const formData = new FormData();
         formData.append('image', evt.target.files[0]);
-        console.log("formData", formData);
         setImage(formData);
     }
 

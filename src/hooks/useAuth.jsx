@@ -9,7 +9,6 @@ function useAuth(key) {
 
   useEffect(function fetchUserDataOnMountAndTokenChange() {
     async function fetchUserData() {
-      console.log("got here", token);
       FrienderApi.token = token;
       const { username } = jwtDecode(token);
       const userData = await FrienderApi.getUser(username);
