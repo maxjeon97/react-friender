@@ -69,7 +69,7 @@ function Chatbox() {
   }
 
   const { friendUsername } = useParams();
-  const friend = user.friends.find(f => f.username = friendUsername);
+  const friend = user.friends.find(f => f.username === friendUsername);
 
   if (!friend) return <Navigate to="/friends" />;
   if (isLoading) return <LoadingSpinner />;
